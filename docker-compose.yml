@@ -1,0 +1,52 @@
+services:
+  mysql:
+    image: mysql:8
+    container_name: brevvo-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: brevvo_1f9296d4
+    ports:
+      - "3306:3306"
+    networks:
+      - appnet
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  frontend:
+    build: ./frontend
+    container_name: brevvo-frontend
+    ports:
+      - "4000:4000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+    networks:
+      - appnet
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    container_name: brevvo-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DB=brevvo_1f9296d4
+    networks:
+      - appnet
+    depends_on:
+      mysql:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  appnet:
+    driver: bridge

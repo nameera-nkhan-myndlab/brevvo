@@ -1,0 +1,35 @@
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+.title { font-size: 18px; font-weight: 600; }
+.sub { font-size: 12px; color: var(--color-gray-400); }
+.addBtn { display: flex; align-items: center; gap: 8px; background: var(--color-primary); color: #fff; border: none; padding: 8px 16px; border-radius: 8px; font-size: 14px; cursor: pointer; }
+.addBtn:hover { background: var(--color-primary-hover); }
+.card { background: #fff; border: 1px solid var(--color-gray-200); border-radius: 12px; overflow: hidden; }
+.toolbar { padding: 12px 20px; border-bottom: 1px solid var(--color-gray-100); }
+.searchWrap { position: relative; max-width: 300px; }
+.searchIcon { position: absolute; left: 10px; top: 10px; color: var(--color-gray-400); }
+.searchInput { width: 100%; padding: 8px 8px 8px 32px; border: none; background: var(--color-gray-100); border-radius: 8px; font-size: 13px; outline: none; }
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table thead { background: var(--color-gray-50); }
+.table th { text-align: left; padding: 8px 20px; font-size: 12px; color: var(--color-gray-400); font-weight: 500; text-transform: uppercase; }
+.table td { padding: 12px 20px; border-top: 1px solid var(--color-gray-100); }
+.table tr:hover { background: var(--color-gray-50); }
+.nameCell { display: flex; align-items: center; gap: 10px; }
+.avatarSm { width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary-light); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+.nameMain { font-weight: 500; }
+.titleText { font-size: 12px; color: var(--color-gray-400); }
+.delBtn { background: none; border: none; color: var(--color-gray-400); font-size: 18px; cursor: pointer; }
+.delBtn:hover { color: var(--color-rose); }
+.modalOverlay { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; }
+.modalBackdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+.modal { position: relative; background: #fff; border-radius: 12px; width: 100%; max-width: 480px; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+.modalHead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.modalHead h3 { font-size: 16px; font-weight: 600; }
+.modalHead button { background: none; border: none; cursor: pointer; }
+.modalBody { display: flex; flex-direction: column; gap: 8px; }
+.modalBody label { font-size: 12px; color: var(--color-gray-400); }
+.modalBody input { width: 100%; padding: 8px 12px; border: 1px solid var(--color-gray-200); border-radius: 8px; font-size: 14px; outline: none; }
+.modalBody input:focus { box-shadow: 0 0 0 2px #c7d2fe; }
+.formRow { display: flex; gap: 12px; }
+.modalFoot { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+.cancelBtn { padding: 8px 16px; border: none; background: none; border-radius: 8px; cursor: pointer; }
+.saveBtn { padding: 8px 16px; border: none; background: var(--color-primary); color: #fff; border-radius: 8px; cursor: pointer; }
